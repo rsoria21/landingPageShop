@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   /* background: linear-gradient(-75deg, #ffd8c0 60%, #f9cbae 40%); */
-  background: linear-gradient(-75deg, #4680569d 60%, #3f8d94 40%);
+  background: linear-gradient(-75deg, #ccc0a1 60%, rgb(145, 107, 26) 40%);
 }
 
 h1 {
@@ -21,7 +21,7 @@ p {
   font-size: 2.25rem;
   margin: 0;
 }
-
+/* Main Container of Landing page */
 .main-container {
   display: flex;
   flex-direction: row;
@@ -29,7 +29,7 @@ p {
   height: 100vh;
   width: 100vw;
 }
-
+/* Left Container of Landing Page */
 .container-left {
   display: flex;
   flex: 50%;
@@ -41,6 +41,7 @@ p {
   width: 70%;
 }
 
+/* Right Container of Landing Page */
 .container-right {
   display: flex;
   flex: 50%;
@@ -52,27 +53,31 @@ p {
 .main-title {
   margin-bottom: 2rem;
   font-family: "Nixie One", cursive;
+  animation: fade 3s;
 }
 
 .support-title {
   margin-bottom: 2rem;
   font-family: "Poiret One", cursive;
+  animation: fade 3s;
 }
 
 .button {
   padding: 1rem 6rem;
   border-radius: 10rem;
-  /* background-color: #a47457; */
-  background-color: #3f8d94;
+  background-color: rgb(145, 107, 26);
   color: #fff;
   border: none;
   cursor: pointer;
+  -webkit-animation: buttonBounce 2s infinite alternate;
+  -moz-animation: buttonBounce 2s infinite alternate;
+  animation: buttonBounce 2s infinite alternate;
 }
 
 .button:hover {
   opacity: 0.8;
-  /* background-color: #3a858c; */
 }
+/* Media Query for Diff Display Sizes */
 
 @media only screen and (max-width: 600px) {
   h1 {
@@ -88,5 +93,34 @@ p {
   }
   .button {
     padding: 1rem 3.5rem;
+  }
+}
+
+/* Button Animation Keyframes */
+
+@-webkit-keyframes bounce {
+  to {
+    -webkit-transform: scale(1.2);
+  }
+}
+@-moz-keyframes bounce {
+  to {
+    -moz-transform: scale(1.2);
+  }
+}
+@keyframes buttonBounce {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+/* Text Animation Keyframes */
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
   }
 }
